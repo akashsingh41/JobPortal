@@ -1,0 +1,51 @@
+#itembox{    
+    margin: 10px;
+    border-radius: 25px;
+    border: 1px solid brown;    
+    background-color: bisque; 
+    width: 30%;    
+    padding: 5px; 
+    display: inline-block;    
+}
+
+#resultcontainer
+{
+    text-align: center;     
+    padding: 0 5% 5% 5%;
+    color: #405065;
+}
+
+
+.searchbox
+{
+  border: 1px solid #ccc;
+  width: 20%;
+  height: 30px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#titlehead{
+    padding: 5px 5px 5px 5px;
+    margin: 2px 2px 2px 2px;
+}
+
+#locale{
+    padding: 5px 5px 5px 5px;
+    margin: 2px 2px 2px 2px;
+    color: grey;
+}
+
+.apply-btn 
+{
+        background-color:orange; /* Green */
+        border: 0.5ch #405065;
+        border-radius: 10px;
+        height: 20px;
+        color: brown;
+        
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+}

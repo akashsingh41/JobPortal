@@ -1,0 +1,34 @@
+
+<div style="text-align:center; background-color: darkgray">
+  <h1 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color:firebrick">
+    Welcome to Job Portal
+  </h1>  
+</div>
+
+<div id="resultcontainer" >
+  
+    Filter Jobs: <input type="text" [(ngModel)]="term" class="searchbox" placeholder=" Search for Experience or Location or Skill"  >
+ 
+ <br><br> 
+  Total Jobs Available: {{vacancies.length}} | Showing {{(vacancies | filter: term).length}} Results <br>
+  <div id="itembox" *ngFor="let vacancy of vacancies | filter: term | paginate: { itemsPerPage:9, currentPage:p}">  
+    <h4 id="titlehead">{{vacancy.title}}</h4>
+    <h5 id="locale">{{vacancy.location}}</h5>
+    
+    <details>
+      <summary>See Details</summary>
+    <h6 *ngIf="vacancy.experience">Experience: {{vacancy.experience}}</h6>
+    <h6 *ngIf="vacancy.skills">Skills: {{vacancy.skills}}</h6>
+    <h6 *ngIf="vacancy.salary">Salary: {{vacancy.salary}}</h6>
+    <h6 *ngIf="vacancy.type">Contract Type: {{vacancy.type}}</h6>
+    <h6 *ngIf="vacancy.startdate">Start Date: {{vacancy.startdate}}</h6>
+    <h6 *ngIf="vacancy.enddate">End Date: {{vacancy.enddate}}</h6>
+    <h6 *ngIf="vacancy.source">Source: {{vacancy.source}}</h6>
+    <h6 *ngIf="vacancy.jd">Job Description: {{vacancy.jd}}</h6>
+    <h6 *ngIf="vacancy.created">Created: {{vacancy.created}}</h6>    
+  </details>
+    <br>
+    <a href="{{vacancy.applylink}}" target="_blank"><button class="apply-btn">Apply Now</button></a>
+    </div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
